@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:TriboPersonal.ViewModel"
+             x:Class="TriboPersonal.View.ProfessorMainView">
+
+    <ContentPage.BindingContext>
+        <mvvm:ProfessorMainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid RowDefinitions="2*,2*">
+            
+            <Image Source="imagemprincipal.jpg"                   
+                   Aspect="Fill"
+                   VerticalOptions="StartAndExpand"/>
+
+            <StackLayout Grid.Column="0" Grid.Row="1" Margin="1,10,0,0">
+                <Grid RowDefinitions="3*,3*"
+                      ColumnDefinitions="3*,3*,3*">
+                    <Image Source="gym.png"
+                           HeightRequest="50"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                    <Label Text="Cadastrar Exercícios"
+                           FontSize="13"
+                           Grid.Column="0"
+                           Grid.Row="1"/>
+
+                    <Image Source="muscle.png"
+                           HeightRequest="50"
+                           Grid.Row="0"
+                           Grid.Column="1"/>
+                    <Label Text="Cadastrar Série"
+                           FontSize="13"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           Grid.Row="1"/>
+
+                    <Image Source="money.png"
+                           HeightRequest="50"
+                           Grid.Row="0"
+                           Grid.Column="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenFinancas}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Finanças"
+                           FontSize="13"
+                           Grid.Column="2"
+                           HorizontalTextAlignment="Center"
+                           Grid.Row="1"/>                    
+                </Grid>
+
+                <Label Text="Treinos do Dia"   
+                       Margin="5,0,0,0"
+                       FontSize="25"                           
+                       TextColor="OrangeRed"/>
+                
+                
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Recursos\Fonts\Montserrat-Black.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-ExtraBold.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-ExtraLight.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-Light.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-Medium.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-SemiBold.ttf" />
+    <None Remove="Recursos\Fonts\Montserrat-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-Black.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-ExtraBold.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-ExtraLight.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-Light.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-Medium.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-SemiBold.ttf" />
+    <EmbeddedResource Include="Recursos\Fonts\Montserrat-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net" Version="4.0.7" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\AlunoAppShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\CadastrarAlunoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\FinancasView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ListaAlunosView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ProfessorAppShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ProfessorMainView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\TrocarSenhaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

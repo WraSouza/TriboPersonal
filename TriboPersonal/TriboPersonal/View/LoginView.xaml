@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TriboPersonal.View.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvvm="clr-namespace:TriboPersonal.ViewModel">
+
+    <ContentPage.BindingContext>
+        <mvvm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+
+            <StackLayout
+                Margin="0,50,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="StartAndExpand">
+                <Image Source="triboslogo.png" />
+
+            </StackLayout>
+
+            <StackLayout Margin="20,150,20,0" VerticalOptions="Center">
+                <Frame
+                    BorderColor="OrangeRed"
+                    CornerRadius="30"
+                    HeightRequest="25">
+                    <StackLayout>
+                        <Entry
+                            Placeholder="Usuário"
+                            Text="{Binding Nome}"
+                            
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame
+                    Margin="0,30,0,0"
+                    BorderColor="OrangeRed"
+                    CornerRadius="30"
+                    HeightRequest="25">
+                    <StackLayout>
+                        <Entry
+                            IsPassword="True"
+                            Placeholder="Senha"
+                            Text="{Binding Senha}" />
+                    </StackLayout>
+                </Frame>
+
+                <Button
+                    Margin="0,150,0,0"
+                    BackgroundColor="#FC6E10"
+                    Command="{Binding LoginCommand}"
+                    CornerRadius="20"
+                    Text="Login"
+                    TextColor="White" />
+            </StackLayout>
+
+            <ActivityIndicator
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                VerticalOptions="Center"
+                Color="OrangeRed" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
